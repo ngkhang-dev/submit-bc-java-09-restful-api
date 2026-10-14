@@ -1,4 +1,4 @@
-package com.cybersoft.submitbcjava09restfulapi;
+package com.cybersoft.restfulapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cybersoft</groupId>
-    <artifactId>submit-bc-java-09-restful-api</artifactId>
+    <artifactId>restfulapi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>submit-bc-java-09-restful-api</name>
-    <description>submit-bc-java-09-restful-api</description>
+    <name>restfulapi</name>
+    <description>Assignment BC Java 09 RESTful API</description>
     <url/>
     <licenses>
         <license/>

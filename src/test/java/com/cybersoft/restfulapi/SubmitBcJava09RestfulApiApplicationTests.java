@@ -1,4 +1,4 @@
-package com.cybersoft.submitbcjava09restfulapi;
+package com.cybersoft.restfulapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
