@@ -9,6 +9,7 @@
         * [Question 3: API Máy tính đơn giản (Calculator)](#question-3-api-máy-tính-đơn-giản-calculator)
         * [Question 4: Quản lý sản phẩm (Product CRUD – In-Memory)](#question-4-quản-lý-sản-phẩm-product-crud--in-memory)
         * [Question 5: Quản lý sinh viên (Student API)](#question-5-quản-lý-sinh-viên-student-api)
+        * [Question 7: Tìm kiếm sách (Book Search API)](#question-7-tìm-kiếm-sách-book-search-api)
     * [Prerequisites](#prerequisites)
         * [Project Structure](#project-structure)
         * [Environment](#environment)
@@ -120,6 +121,18 @@
             "fullName": "Nguyễn Khang"
           }
           ```
+
+### Question 7: Tìm kiếm sách (Book Search API)
+
+- Problem:
+    - Khách hàng muốn API tìm kiếm sách theo tác giả.
+        - GET `/books/search?author=abc` → trả về danh sách sách của tác giả đó.
+- Solution: [Full source: Question 7](src/main/java/com/cybersoft/restfulapi/question7)
+    - [Controller](src/main/java/com/cybersoft/restfulapi/question7/controller/BookController.java)
+    - [Service](src/main/java/com/cybersoft/restfulapi/question7/service/BookService.java)
+    - [Model](src/main/java/com/cybersoft/restfulapi/question7/model/Book.java)
+- URL:
+    - Tìm danh sách của sách theo tác giả (GET): <http://localhost:8080/books/search?author=abc>
 
 ## Prerequisites
 
