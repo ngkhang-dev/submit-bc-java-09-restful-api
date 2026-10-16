@@ -1,6 +1,6 @@
-package com.cybersoft.restfulapi.controller;
+package com.cybersoft.restfulapi.question2.controller;
 
-import com.cybersoft.restfulapi.service.GreetingService;
+import com.cybersoft.restfulapi.question2.service.GreetingService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

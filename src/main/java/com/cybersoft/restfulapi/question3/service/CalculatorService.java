@@ -1,6 +1,6 @@
-package com.cybersoft.restfulapi.service;
+package com.cybersoft.restfulapi.question3.service;
 
-import com.cybersoft.restfulapi.app.OperatorCalculation;
+import com.cybersoft.restfulapi.question3.OperatorCalculation;
 import org.springframework.stereotype.Service;
 
 @Service

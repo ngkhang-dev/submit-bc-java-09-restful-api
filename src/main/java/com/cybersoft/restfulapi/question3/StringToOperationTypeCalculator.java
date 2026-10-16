@@ -1,6 +1,5 @@
-package com.cybersoft.restfulapi.utils;
+package com.cybersoft.restfulapi.question3;
 
-import com.cybersoft.restfulapi.app.OperatorCalculation;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 

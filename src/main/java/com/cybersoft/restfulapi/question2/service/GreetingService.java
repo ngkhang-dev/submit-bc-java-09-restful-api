@@ -1,4 +1,4 @@
-package com.cybersoft.restfulapi.service;
+package com.cybersoft.restfulapi.question2.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.cybersoft.restfulapi.controller;
+package com.cybersoft.restfulapi.question1;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

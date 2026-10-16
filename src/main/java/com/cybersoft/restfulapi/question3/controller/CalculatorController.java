@@ -1,7 +1,7 @@
-package com.cybersoft.restfulapi.controller;
+package com.cybersoft.restfulapi.question3.controller;
 
-import com.cybersoft.restfulapi.app.OperatorCalculation;
-import com.cybersoft.restfulapi.service.CalculatorService;
+import com.cybersoft.restfulapi.question3.OperatorCalculation;
+import com.cybersoft.restfulapi.question3.service.CalculatorService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -21,7 +21,8 @@
 - Problem:
     - Team muốn kiểm tra môi trường của bạn.
     - Hãy xây dựng một REST API: `GET /hello` → trả về `"Hello Spring Boot!"`
-- Solution: [HelloController](src/main/java/com/cybersoft/restfulapi/controller/HelloController.java)
+- Solution: [Full source: Question 1](src/main/java/com/cybersoft/restfulapi/question1)
+    - [HelloController](src/main/java/com/cybersoft/restfulapi/question1/HelloController.java)
 - URL: <http:localhost:8080/hello>
 
 ### Question 2: Service Greeting (Dependency Injection)
@@ -30,9 +31,9 @@
     - Product Owner muốn một API chào người dùng.
     - Tạo GreetingService với method `sayHello(String name)`.
     - API GET `/greet?name=Alice` → trả về `Hello Alice!`.
-- Solution:
-    - [GreetingController](src/main/java/com/cybersoft/restfulapi/controller/GreetingController.java)
-    - [GreetingService](src/main/java/com/cybersoft/restfulapi/service/GreetingService.java)
+- Solution: [Full source: Question 2](src/main/java/com/cybersoft/restfulapi/question2)
+    - [GreetingController](src/main/java/com/cybersoft/restfulapi/question2/controller/GreetingController.java)
+    - [GreetingService](src/main/java/com/cybersoft/restfulapi/question2/service/GreetingService.java)
 - URL: <http:localhost:8080/greet?name=Alice>
 
 ### Question 3: API Máy tính đơn giản (Calculator)
@@ -43,12 +44,12 @@
         - GET `/calc/subtract?x=10&y=5` → `5`
         - GET `/calc/multiply?x=10&y=5` → `50`
         - GET `/calc/divide?x=10&y=5` → `2`
-- Solution:
-    - [CalculatorController](src/main/java/com/cybersoft/restfulapi/controller/CalculatorController.java)
-    - [CalculatorService](src/main/java/com/cybersoft/restfulapi/service/CalculatorService.java)
-    - [OperatorCalculation](src/main/java/com/cybersoft/restfulapi/app/OperatorCalculation.java): Define operation
+- Solution: [Full source: Question 3](src/main/java/com/cybersoft/restfulapi/question3)
+    - [CalculatorController](src/main/java/com/cybersoft/restfulapi/question3/controller/CalculatorController.java)
+    - [CalculatorService](src/main/java/com/cybersoft/restfulapi/question3/service/CalculatorService.java)
+    - [OperatorCalculation](src/main/java/com/cybersoft/restfulapi/question3/OperatorCalculation.java): Define operation
       calculator enum
-    - [StringToOperationTypeCalculator](src/main/java/com/cybersoft/restfulapi/utils/StringToOperationTypeCalculator.java):
+    - [StringToOperationTypeCalculator](src/main/java/com/cybersoft/restfulapi/question3/StringToOperationTypeCalculator.java):
       Convert string (path) to enum
 - URL:
     - Add: <http:localhost:8080/calc/add?x=10&y=5>
