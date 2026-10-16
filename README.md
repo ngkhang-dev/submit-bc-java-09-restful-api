@@ -8,6 +8,7 @@
         * [Question 2: Service Greeting (Dependency Injection)](#question-2-service-greeting-dependency-injection)
         * [Question 3: API Máy tính đơn giản (Calculator)](#question-3-api-máy-tính-đơn-giản-calculator)
         * [Question 4: Quản lý sản phẩm (Product CRUD – In-Memory)](#question-4-quản-lý-sản-phẩm-product-crud--in-memory)
+        * [Question 5: Quản lý sinh viên (Student API)](#question-5-quản-lý-sinh-viên-student-api)
     * [Prerequisites](#prerequisites)
         * [Project Structure](#project-structure)
         * [Environment](#environment)
@@ -97,6 +98,28 @@
       ```
 
     - Xóa sản phẩm (DELETE): <http:localhost:8080/products/1>
+
+### Question 5: Quản lý sinh viên (Student API)
+
+- Problem:
+    - Team education cần API quản lý student.
+    - API:
+        - POST `/students` → thêm student từ JSON
+        - GET `/students/{id}` → trả về student theo ID
+- Solution: [Full source: Question 5](src/main/java/com/cybersoft/restfulapi/question5)
+    - [Controller](src/main/java/com/cybersoft/restfulapi/question5/controller/StudentController.java)
+    - [Service](src/main/java/com/cybersoft/restfulapi/question5/service/StudentService.java)
+    - [Model](src/main/java/com/cybersoft/restfulapi/question5/model/Student.java)
+- URLs:
+    - Lấy thông tin sinh viên theo ID (GET): <http://localhost:8080/students/1>
+        - Thêm mới sinh viên (POST): <http://localhost:8080/students/>
+
+          ```json
+          {
+            "email": "ngkhang@gmail.com",
+            "fullName": "Nguyễn Khang"
+          }
+          ```
 
 ## Prerequisites
 
