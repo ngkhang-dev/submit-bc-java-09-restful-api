@@ -1,0 +1,28 @@
+package com.cybersoft.restfulapi.question9.controller;
+
+import com.cybersoft.restfulapi.question9.model.Customer;
+import com.cybersoft.restfulapi.question9.service.CustomerService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/customers")
+public class CustomerController {
+
+    private CustomerService customerService;
+
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Customer>> getListCustomers () {
+        List<Customer> customers = customerService.getListCustomers();
+
+        return ResponseEntity.ok(customers);
+    }
+}

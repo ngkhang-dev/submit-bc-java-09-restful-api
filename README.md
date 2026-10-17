@@ -10,6 +10,7 @@
         * [Question 4: Quản lý sản phẩm (Product CRUD – In-Memory)](#question-4-quản-lý-sản-phẩm-product-crud--in-memory)
         * [Question 5: Quản lý sinh viên (Student API)](#question-5-quản-lý-sinh-viên-student-api)
         * [Question 7: Tìm kiếm sách (Book Search API)](#question-7-tìm-kiếm-sách-book-search-api)
+        * [Question 9: Kiến trúc chuẩn 3 Layer (Customer API)](#question-9-kiến-trúc-chuẩn-3-layer-customer-api)
     * [Prerequisites](#prerequisites)
         * [Project Structure](#project-structure)
         * [Environment](#environment)
@@ -133,6 +134,18 @@
     - [Model](src/main/java/com/cybersoft/restfulapi/question7/model/Book.java)
 - URL:
     - Tìm danh sách của sách theo tác giả (GET): <http://localhost:8080/books/search?author=abc>
+
+### Question 9: Kiến trúc chuẩn 3 Layer (Customer API)
+
+- Problem:
+    - Tech lead muốn project chia đúng tầng:
+        - Controller: nhận request.
+        - Service: xử lý logic.
+        - Repository: quản lý dữ liệu (In-memory).
+        - Entity Customer(id, name, phone).
+- Solution: [Full source: Question 9](src/main/java/com/cybersoft/restfulapi/question9)
+- URL:
+    - Lấy danh sách khách hàng (GET): <http://localhost:8080/customer>
 
 ## Prerequisites
 
