@@ -9,6 +9,7 @@
         * [Question 3: API Máy tính đơn giản (Calculator)](#question-3-api-máy-tính-đơn-giản-calculator)
         * [Question 4: Quản lý sản phẩm (Product CRUD – In-Memory)](#question-4-quản-lý-sản-phẩm-product-crud--in-memory)
         * [Question 5: Quản lý sinh viên (Student API)](#question-5-quản-lý-sinh-viên-student-api)
+        * [Question 6: Tạo Bean Config thủ công (AppConfig)](#question-6-tạo-bean-config-thủ-công-appconfig)
         * [Question 7: Tìm kiếm sách (Book Search API)](#question-7-tìm-kiếm-sách-book-search-api)
         * [Question 8: Quản lý nhân viên (Employee + Exception Handling)](#question-8-quản-lý-nhân-viên-employee--exception-handling)
         * [Question 9: Kiến trúc chuẩn 3 Layer (Customer API)](#question-9-kiến-trúc-chuẩn-3-layer-customer-api)
@@ -123,6 +124,19 @@
             "fullName": "Nguyễn Khang"
           }
           ```
+
+### Question 6: Tạo Bean Config thủ công (AppConfig)
+
+- Problem:
+    - CTO muốn bạn thử tạo Bean thủ công thay vì @Service.
+        - Tạo AppConfig với @Configuration.
+        - Định nghĩa @Bean cho GreetingService.
+        - Inject vào Controller để sử dụng.
+- Solution: [Full source: Question 6](src/main/java/com/cybersoft/restfulapi/question6)
+    - [Controller](src/main/java/com/cybersoft/restfulapi/question6/controller/GreetingControllerV2.java)
+    - [Service](src/main/java/com/cybersoft/restfulapi/question6/service/GreetingServiceV2.java)
+    - [AppConfig](src/main/java/com/cybersoft/restfulapi/question6/AppConfig.java)
+- URL: GET <http://localhost:8080/greet-v2>
 
 ### Question 7: Tìm kiếm sách (Book Search API)
 
