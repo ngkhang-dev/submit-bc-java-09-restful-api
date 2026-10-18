@@ -10,6 +10,7 @@
         * [Question 4: Quản lý sản phẩm (Product CRUD – In-Memory)](#question-4-quản-lý-sản-phẩm-product-crud--in-memory)
         * [Question 5: Quản lý sinh viên (Student API)](#question-5-quản-lý-sinh-viên-student-api)
         * [Question 7: Tìm kiếm sách (Book Search API)](#question-7-tìm-kiếm-sách-book-search-api)
+        * [Question 8: Quản lý nhân viên (Employee + Exception Handling)](#question-8-quản-lý-nhân-viên-employee--exception-handling)
         * [Question 9: Kiến trúc chuẩn 3 Layer (Customer API)](#question-9-kiến-trúc-chuẩn-3-layer-customer-api)
     * [Prerequisites](#prerequisites)
         * [Project Structure](#project-structure)
@@ -134,6 +135,19 @@
     - [Model](src/main/java/com/cybersoft/restfulapi/question7/model/Book.java)
 - URL:
     - Tìm danh sách của sách theo tác giả (GET): <http://localhost:8080/books/search?author=abc>
+
+### Question 8: Quản lý nhân viên (Employee + Exception Handling)
+
+- Problem:
+    - Team HR cần API quản lý nhân viên.
+    - GET `/employees/{id}` → trả về nhân viên.
+        - Nếu không có ID → trả về lỗi:
+          `{ "error": "Employee not found", "status": 404 }`
+
+- Solution: [Full source: Question 8](src/main/java/com/cybersoft/restfulapi/question8)
+- URL: Lấy thông tin nhân viên theo ID (GET)
+    - ID tồn tại: <http://localhost:8080/employees/1>
+    - ID không tồn tại: <http://localhost:8080/employees/999>
 
 ### Question 9: Kiến trúc chuẩn 3 Layer (Customer API)
 
