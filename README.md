@@ -13,6 +13,7 @@
         * [Question 7: Tìm kiếm sách (Book Search API)](#question-7-tìm-kiếm-sách-book-search-api)
         * [Question 8: Quản lý nhân viên (Employee + Exception Handling)](#question-8-quản-lý-nhân-viên-employee--exception-handling)
         * [Question 9: Kiến trúc chuẩn 3 Layer (Customer API)](#question-9-kiến-trúc-chuẩn-3-layer-customer-api)
+        * [Question 10: Quản lý đơn hàng (Order với Product – OneToMany)](#question-10-quản-lý-đơn-hàng-order-với-product--onetomany)
     * [Prerequisites](#prerequisites)
         * [Project Structure](#project-structure)
         * [Environment](#environment)
@@ -174,6 +175,33 @@
 - Solution: [Full source: Question 9](src/main/java/com/cybersoft/restfulapi/question9)
 - URL:
     - Lấy danh sách khách hàng (GET): <http://localhost:8080/customer>
+
+### Question 10: Quản lý đơn hàng (Order với Product – OneToMany)
+
+- Problem:
+    - Khách hàng muốn API quản lý Order.
+        - Entity Order(id, customerName, List<Product>).
+        - POST `/orders` → tạo order với danh sách sản phẩm.
+        - GET `/orders` → trả về toàn bộ order.
+- Solution: [Full source: Question 10](src/main/java/com/cybersoft/restfulapi/question10)
+    - URL:
+        - Lấy danh sách đơn hàng (GET): <http://localhost:8080/orders>
+            - Tạo đơn hàng mới (POST): <http://localhost:8080/orders>
+                - Body:
+
+                    ```json
+                    {
+                        "customerName": "Nguyễn Văn A",
+                        "products": [
+                            {
+                                "id": 2,
+                                "productName": "Mac mini",
+                                "price": 900,
+                                "quantity": 2
+                            }
+                        ]
+                    }
+                    ```
 
 ## Prerequisites
 
