@@ -30,17 +30,16 @@ public class BookService {
     }
 
     public List<Book> findAll() {
-        return mockData;
+        return List.copyOf(mockData);
     }
 
     public List<Book> findByAuthor(String author) {
-        if (author == null || author.trim().isEmpty()) {
-            return findAll();
-        }
+        String keyword = author.trim().toLowerCase();
 
         return mockData
                 .stream()
-                .filter(book -> book.getAuthor().equals(author))
+                .filter(book -> book.getAuthor() != null
+                        && book.getAuthor().toLowerCase().contains(keyword))
                 .toList();
     }
 }

@@ -19,33 +19,33 @@ public class OrderRepository {
         Product product1 = new Product();
         product1.setId(1);
         product1.setProductName("iPhone Dual");
-        product1.setPrice(new BigDecimal(1999.99));
+        product1.setPrice(new BigDecimal("1999.99"));
         product1.setQuantity(1);
 
         Product product2 = new Product();
         product2.setId(2);
         product2.setProductName("iPad");
-        product2.setPrice(new BigDecimal(999.99));
+        product2.setPrice(new BigDecimal("999.99"));
         product2.setQuantity(1);
 
         Order order1 = new Order();
         order1.setId(mockIndex);
         order1.setCustomerName("Nguyễn Khang");
-        order1.setListProducts(List.of(product1, product2));
+        order1.setProducts(List.of(product1, product2));
 
         mockData.add(order1);
         mockIndex++;
     }
 
     public List<Order> findAll() {
-        return mockData;
+        return List.copyOf(mockData);
     }
 
     public boolean save(String customerName, List<Product> listProducts) {
         Order newOrder = new Order();
-        newOrder.setId(mockIndex+1);
+        newOrder.setId(mockIndex);
         newOrder.setCustomerName(customerName);
-        newOrder.setListProducts(listProducts);
+        newOrder.setProducts(listProducts);
 
         mockData.add(newOrder);
         mockIndex++;

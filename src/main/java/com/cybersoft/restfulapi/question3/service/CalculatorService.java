@@ -8,10 +8,10 @@ public class CalculatorService {
 
     public int calculate(int x, int y, OperatorCalculation operation) {
         return switch (operation) {
-            case operation.ADD -> add(x, y);
-            case operation.SUBTRACT -> sub(x, y);
-            case operation.MULTIPLY -> multiply(x, y);
-            case operation.DIVIDE -> divide(x, y);
+            case ADD -> add(x, y);
+            case SUBTRACT -> sub(x, y);
+            case MULTIPLY -> multiply(x, y);
+            case DIVIDE -> divide(x, y);
         };
     }
 

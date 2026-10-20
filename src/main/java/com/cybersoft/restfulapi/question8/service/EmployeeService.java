@@ -23,11 +23,12 @@ public class EmployeeService {
     }
 
     public Employee findById(int id) {
-        Employee employee = mockData.stream().filter(emp -> emp.getId() == id).findFirst().orElse(null);
+        Employee employee = mockData
+                .stream()
+                .filter(emp -> emp.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new ResourceNotFound("Employee not found"));
 
-        if (employee == null) {
-            throw new ResourceNotFound("Employee not found");
-        }
         return employee;
     }
 }

@@ -37,7 +37,7 @@ public class StudentService {
 
         Student newStudent = new Student();
 
-        newStudent.setId(mockIndex+1);
+        newStudent.setId(mockIndex);
         newStudent.setEmail(student.getEmail());
         newStudent.setFullName(student.getFullName());
 

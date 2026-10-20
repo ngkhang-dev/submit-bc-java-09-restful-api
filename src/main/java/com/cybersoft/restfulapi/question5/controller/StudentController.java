@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/students")
 public class StudentController {
 
-    private StudentService studentService;
+    private final StudentService studentService;
 
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
@@ -16,13 +16,8 @@ public class StudentController {
 
     @GetMapping("/{id}")
     public Student getStudentById(@PathVariable String id) {
-        try {
-            int idNumber = Integer.parseInt(id);
-            return studentService.findById(idNumber);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException("ID must be number");
-        }
+        int idNumber = Integer.parseInt(id);
+        return studentService.findById(idNumber);
     }
 
     @PostMapping

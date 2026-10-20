@@ -15,8 +15,7 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse();
 
         errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
-        errorResponse.setMessage(ex.getMessage());
-        errorResponse.setError("Resource not found");
+        errorResponse.setError(ex.getMessage());
 
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }

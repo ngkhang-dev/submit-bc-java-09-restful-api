@@ -5,14 +5,14 @@ import java.util.List;
 public class Order {
     private int id;
     private String customerName;
-    private List<Product> listProducts;
+    private List<Product> products;
 
-    public List<Product> getListProducts() {
-        return listProducts;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setListProducts(List<Product> listProducts) {
-        this.listProducts = listProducts;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     public int getId() {

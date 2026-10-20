@@ -2,6 +2,7 @@ package com.cybersoft.restfulapi.question3.controller;
 
 import com.cybersoft.restfulapi.question3.OperatorCalculation;
 import com.cybersoft.restfulapi.question3.service.CalculatorService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,20 +16,14 @@ public class CalculatorController {
     }
 
     @GetMapping("/{operation}")
-    public String getResultCalculator(@PathVariable OperatorCalculation operation, @RequestParam String x, @RequestParam String y) {
-//        if (operation.isEmpty()) {
-//            throw new IllegalArgumentException("Type is required");
-//        }
+    public ResponseEntity<Integer> getResultCalculator(@PathVariable OperatorCalculation operation,
+                                                       @RequestParam String x,
+                                                       @RequestParam String y) {
 
-        try {
-            int xNum = Integer.parseInt(x);
-            int yNum = Integer.parseInt(y);
+        int xNum = Integer.parseInt(x);
+        int yNum = Integer.parseInt(y);
+        int result = service.calculate(xNum, yNum, operation);
 
-            return String.valueOf(service.calculate(xNum, yNum, operation));
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            throw new IllegalArgumentException("x or y is invalid");
-        }
+        return ResponseEntity.ok(result);
     }
 }

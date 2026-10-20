@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public class CustomerRepository {
 
-    private static final List<Customer> mockData = new ArrayList<>();
+    private final List<Customer> mockData = new ArrayList<>();
 
     public CustomerRepository() {
         Customer customer1 = new Customer();
@@ -26,6 +26,6 @@ public class CustomerRepository {
     }
 
     public List<Customer> findAll() {
-        return mockData;
+        return List.copyOf(mockData);
     }
 }

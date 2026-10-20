@@ -3,6 +3,7 @@ package com.cybersoft.restfulapi.question6.controller;
 import com.cybersoft.restfulapi.question6.service.GreetingServiceV2;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,7 +17,7 @@ public class GreetingControllerV2 {
     }
 
     @GetMapping
-    public String greeting() {
-        return greetingServiceV2.sayHello("Nguyen Khang");
+    public String greeting(@RequestParam(defaultValue = "World") String name) {
+        return greetingServiceV2.sayHello(name);
     }
 }

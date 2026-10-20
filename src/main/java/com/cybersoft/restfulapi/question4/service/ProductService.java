@@ -26,17 +26,7 @@ public class ProductService {
     }
 
     public Product create(ProductDTO productDTO) {
-        if (productRepository.findByName(productDTO.getName()) != null) {
-            return null;
-        }
-
-        if (productDTO.getPrice().compareTo(BigDecimal.ZERO) < 0) {
-            throw new IllegalArgumentException("Price must be greater than zero");
-        }
-
-        if (productDTO.getQuantity() < 0) {
-            throw new IllegalArgumentException("Quantity must be greater than zero");
-        }
+        validate(productDTO);
 
         Product newProduct = new Product(0, productDTO.getName(), productDTO.getPrice(),
                 productDTO.getQuantity());
@@ -50,17 +40,9 @@ public class ProductService {
             return null;
         }
 
-        if (productRepository.findByName(productDTO.getName()) != null) {
-            throw new IllegalArgumentException("Product name already exists");
-        }
+        Product sameName = productRepository.findByName(productDTO.getName());
 
-        if (productDTO.getPrice().compareTo(BigDecimal.ZERO) < 0) {
-            throw new IllegalArgumentException("Price must be greater than zero");
-        }
-
-        if (productDTO.getQuantity() < 0) {
-            throw new IllegalArgumentException("Quantity must be greater than zero");
-        }
+        validate(productDTO);
 
         Product updatedProduct = new Product();
         updatedProduct.setId(id);
@@ -73,5 +55,17 @@ public class ProductService {
 
     public Product delete(int id) {
         return productRepository.delete(id);
+    }
+
+    private void validate(ProductDTO dto) {
+        if (dto.getName() == null || dto.getName().isBlank()) {
+            throw new IllegalArgumentException("Name is required");
+        }
+        if (dto.getPrice() == null || dto.getPrice().compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Price must not be negative");
+        }
+        if (dto.getQuantity() < 0) {
+            throw new IllegalArgumentException("Quantity must not be negative");
+        }
     }
 }

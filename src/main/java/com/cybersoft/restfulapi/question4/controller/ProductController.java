@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
-    private ProductService productService;
+    private final ProductService productService;
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -24,13 +24,8 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public Product getDetail(@PathVariable String id) {
-        try {
-            int idNumber = Integer.parseInt(id);
-            return productService.getById(idNumber);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException("id must be number");
-        }
+        int idNumber = Integer.parseInt(id);
+        return productService.getById(idNumber);
     }
 
     @PostMapping
@@ -40,24 +35,14 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public Product update(@PathVariable String id, @RequestBody ProductDTO productDTO) {
-        try {
-            int idNumber = Integer.parseInt(id);
-            return productService.update(idNumber, productDTO);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException("Product ID must be number");
-        }
+        int idNumber = Integer.parseInt(id);
+        return productService.update(idNumber, productDTO);
     }
 
     @DeleteMapping("/{id}")
     public Product delete(@PathVariable String id) {
-        try {
-            int idNumber = Integer.parseInt(id);
-            return productService.delete(idNumber);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new IllegalArgumentException("Product ID must be number");
-        }
+        int idNumber = Integer.parseInt(id);
+        return productService.delete(idNumber);
     }
 
 }
