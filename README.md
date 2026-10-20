@@ -1,5 +1,9 @@
 # BC Java - Assignment 09 - RESTful API
 
+![Status](https://img.shields.io/badge/status-completed-brightgreen)
+![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=white)
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)
+
 <!-- TOC -->
 
 * [BC Java - Assignment 09 - RESTful API](#bc-java---assignment-09---restful-api)
@@ -30,7 +34,7 @@
     - Hãy xây dựng một REST API: `GET /hello` → trả về `"Hello Spring Boot!"`
 - Solution: [Full source: Question 1](src/main/java/com/cybersoft/restfulapi/question1)
     - [HelloController](src/main/java/com/cybersoft/restfulapi/question1/HelloController.java)
-- URL: <http:localhost:8080/hello>
+- URL: <http://localhost:8080/hello>
 
 ### Question 2: Service Greeting (Dependency Injection)
 
@@ -41,7 +45,7 @@
 - Solution: [Full source: Question 2](src/main/java/com/cybersoft/restfulapi/question2)
     - [GreetingController](src/main/java/com/cybersoft/restfulapi/question2/controller/GreetingController.java)
     - [GreetingService](src/main/java/com/cybersoft/restfulapi/question2/service/GreetingService.java)
-- URL: <http:localhost:8080/greet?name=Alice>
+- URL: <http://localhost:8080/greet?name=Alice>
 
 ### Question 3: API Máy tính đơn giản (Calculator)
 
@@ -59,10 +63,10 @@
     - [StringToOperationTypeCalculator](src/main/java/com/cybersoft/restfulapi/question3/StringToOperationTypeCalculator.java):
       Convert string (path) to enum
 - URL:
-    - Add: <http:localhost:8080/calc/add?x=10&y=5>
-    - Subtract: <http:localhost:8080/calc/subtract?x=10&y=5>
-    - Multiply: <http:localhost:8080/calc/multiply?x=10&y=5>
-    - Divide: <http:localhost:8080/calc/divide?x=10&y=5>
+    - Add: <http://localhost:8080/calc/add?x=10&y=5>
+    - Subtract: <http://localhost:8080/calc/subtract?x=10&y=5>
+    - Multiply: <http://localhost:8080/calc/multiply?x=10&y=5>
+    - Divide: <http://localhost:8080/calc/divide?x=10&y=5>
 
 ### Question 4: Quản lý sản phẩm (Product CRUD – In-Memory)
 
@@ -80,9 +84,9 @@
     - [Repository](src/main/java/com/cybersoft/restfulapi/question4/repository/ProductRepository.java)
     - [Service](src/main/java/com/cybersoft/restfulapi/question4/service/ProductService.java)
 - URLs:
-    - Lấy danh sách sản phẩm (GET): <http:localhost:8080/products>
-    - Lấy thông tin chi tiết của sản phầm theo ID (GET) <http:localhost:8080/products/1>
-    - Thêm mới một sản phẩm (POST): <http:localhost:8080/products/>
+    - Lấy danh sách sản phẩm (GET): <http://localhost:8080/products>
+    - Lấy thông tin chi tiết của sản phầm theo ID (GET) <http://localhost:8080/products/1>
+    - Thêm mới một sản phẩm (POST): <http://localhost:8080/products/>
 
       ```json
       {
@@ -92,7 +96,7 @@
       }
       ```
 
-    - Cập nhật thông tin sản phẩm (PUT): <http:localhost:8080/products/1>
+    - Cập nhật thông tin sản phẩm (PUT): <http://localhost:8080/products/1>
 
       ```json
       {
@@ -102,7 +106,7 @@
       }
       ```
 
-    - Xóa sản phẩm (DELETE): <http:localhost:8080/products/1>
+    - Xóa sản phẩm (DELETE): <http://localhost:8080/products/1>
 
 ### Question 5: Quản lý sinh viên (Student API)
 
@@ -161,7 +165,7 @@
 
 - Solution: [Full source: Question 8](src/main/java/com/cybersoft/restfulapi/question8)
 - URL: Lấy thông tin nhân viên theo ID (GET)
-    - ID tồn tại: <http://localhost:8080/employees/1>
+    - ID tồn tại: <http://localhost:8080/employees/0>
     - ID không tồn tại: <http://localhost:8080/employees/999>
 
 ### Question 9: Kiến trúc chuẩn 3 Layer (Customer API)
@@ -206,6 +210,67 @@
 ## Prerequisites
 
 ### Project Structure
+
+```text
+./
+│   .gitattributes
+│   .gitignore
+│   HELP.md
+│   mvnw
+│   mvnw.cmd
+│   pom.xml
+│   README.md
+│
+├───.mvn
+│   └───wrapper
+└───src
+    └───main
+        ├───java
+        │   └───com
+        │       └───cybersoft
+        │           └───restfulapi
+        │               ├───question1
+        │               ├───question2
+        │               │   ├───controller
+        │               │   └───service
+        │               ├───question3
+        │               │   ├───controller
+        │               │   └───service
+        │               ├───question4
+        │               │   ├───controller
+        │               │   ├───dto
+        │               │   ├───model
+        │               │   ├───repository
+        │               │   └───service
+        │               ├───question5
+        │               │   ├───controller
+        │               │   ├───model
+        │               │   └───service
+        │               ├───question6
+        │               │   ├───controller
+        │               │   └───service
+        │               ├───question7
+        │               │   ├───controller
+        │               │   ├───model
+        │               │   └───service
+        │               ├───question8
+        │               │   ├───controller
+        │               │   ├───exception
+        │               │   ├───model
+        │               │   └───service
+        │               ├───question9
+        │               │   ├───controller
+        │               │   ├───model
+        │               │   ├───repository
+        │               │   └───service
+        │               └───question10
+        │                   ├───controller
+        │                   ├───model
+        │                   ├───repository
+        │                   └───service
+        └───resources
+            └───application.properties
+```
 
 ### Environment
 
